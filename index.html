@@ -1,260 +1,292 @@
 <!doctype html>
 <html lang="fr">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>StageLink — Agence de stages</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>StageLink Maroc — Stage & CV</title>
+
 <style>
+:root{
+  --blue:#2457e6;
+  --blue2:#163da8;
+  --ink:#101828;
+  --muted:#667085;
+  --line:#e5eaf2;
+  --soft:#f5f7fb;
+  --white:#fff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--ink);
+  background:#fff;
+  font-family:Arial,sans-serif;
+  line-height:1.55
+}
+h1,h2,h3{line-height:1.15;margin:0 0 16px}
+h1{font-size:clamp(42px,6vw,72px);letter-spacing:-3px}
+h2{font-size:clamp(30px,4vw,46px)}
+p{color:var(--muted)}
+a{text-decoration:none;color:inherit}
 
-:root{--ink:#101828;--muted:#667085;--blue:#2457e6;--blue2:#163da8;--line:#e5eaf2;--soft:#f5f7fb;--white:#fff}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:#fff;font-family:"DM Sans",Arial,sans-serif;line-height:1.55}h1,h2,h3{font-family:Manrope,Arial,sans-serif;line-height:1.1;margin:0 0 18px}h1{font-size:clamp(46px,6vw,78px);letter-spacing:-3px}h2{font-size:clamp(32px,4vw,48px);letter-spacing:-1.5px}p{color:var(--muted)}a{text-decoration:none;color:inherit}.nav{height:78px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid #edf0f5;background:#fff;position:sticky;top:0;z-index:20}.brand{font:800 24px Manrope;letter-spacing:-1px}.brand span{display:inline-grid;place-items:center;width:35px;height:35px;margin-right:6px;border-radius:10px;background:var(--blue);color:#fff}.nav nav{display:flex;gap:24px;color:#475467;font-size:14px;font-weight:600}.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border:0;border-radius:11px;background:var(--blue);color:#fff;font-weight:700;cursor:pointer;box-shadow:0 8px 20px #2457e633}.btn:hover{background:var(--blue2)}.btn.small{padding:11px 16px}.btn.ghost{background:#fff;color:var(--blue);border:1px solid #d8e0f2;box-shadow:none}.full{width:100%}.hero{padding:90px 7%;min-height:650px;background:radial-gradient(circle at 80% 20%,#dfe9ff 0,#f8faff 35%,#fff 70%);display:grid;grid-template-columns:1.2fr .8fr;gap:70px;align-items:center}.eyebrow{font-size:12px;letter-spacing:2px;color:var(--blue);font-weight:800}.hero h1{margin-top:14px}.hero h1 em{font-style:normal;color:var(--blue)}.hero-copy>p{font-size:19px;max-width:620px}.actions{display:flex;gap:12px;margin:28px 0}.trust{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:13px;color:var(--muted)}.trust b{font-size:20px;color:var(--ink);margin-left:15px}.hero-card{background:#fff;padding:30px;border:1px solid #e3e8f2;border-radius:22px;box-shadow:0 25px 70px #183b8217}.search-head{display:flex;justify-content:space-between;font-weight:800;font-size:19px;margin-bottom:18px}.search-head strong{color:var(--blue)}input,select,textarea{width:100%;padding:13px 14px;border:1px solid #d9e0eb;border-radius:10px;background:#fff;color:var(--ink);font:inherit;outline:none}input:focus,select:focus,textarea:focus{border-color:#8aa7f5;box-shadow:0 0 0 3px #2457e614}.hero-card>*{margin-bottom:12px}.hero-card small{color:var(--muted)}.section{padding:90px 7%}.section.alt{background:var(--soft)}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:40px}.steps,.offers{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.steps article,.offer{background:#fff;border:1px solid var(--line);padding:30px;border-radius:18px}.steps article>span{color:var(--blue);font-weight:800;font-size:13px}.steps h3{font-size:21px;margin-top:28px}.offer{transition:.2s}.offer:hover{transform:translateY(-4px);box-shadow:0 18px 35px #1018280c}.offer .tag{display:inline-block;margin-top:16px;background:#edf2ff;color:var(--blue);padding:5px 10px;border-radius:20px;font-size:12px;font-weight:700}.textlink{color:var(--blue);font-weight:700}.form-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}.form-layout>div>p{font-size:17px}.form-card{padding:30px;border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:0 15px 40px #1018280a;display:grid;gap:15px}.two{display:grid;grid-template-columns:1fr 1fr;gap:15px}label{font-size:13px;font-weight:700;color:#344054;display:grid;gap:7px}.mini-note,.demo{padding:15px;background:var(--soft);border-radius:10px;color:var(--muted);font-size:13px;margin-top:25px}.form-msg{font-weight:700;font-size:14px;color:#16794a}.dark{background:#101828;color:#fff}.dark p{color:#b8c1d1}.light{color:#9fb9ff}.company-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:80px;align-items:center}.company-points{display:grid;grid-template-columns:1fr 1fr;gap:15px}.company-points div{padding:18px;border:1px solid #344054;border-radius:12px}.lightbtn{background:#fff;color:#101828;box-shadow:none}.dash-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.metric{padding:28px;background:#fff;border:1px solid var(--line);border-radius:18px}.metric span{color:var(--muted)}.metric strong{display:block;font:800 40px Manrope;margin-top:12px}.contact{text-align:center;background:#eef3ff}.contact p{font-size:18px;margin-bottom:28px}footer{padding:45px 7%;background:#0b1220;color:#fff;display:flex;gap:30px;align-items:center;justify-content:space-between}footer p,footer small{color:#98a2b3;font-size:13px}footer .brand{font-size:20px}
-@media(max-width:900px){.nav nav{display:none}.hero,.form-layout,.company-grid{grid-template-columns:1fr}.hero{padding-top:60px}.steps,.offers,.dash-grid{grid-template-columns:1fr}.section{padding:65px 6%}.company-grid{gap:35px}.two{grid-template-columns:1fr}footer{flex-direction:column;align-items:flex-start}.hero-card{max-width:600px}}
+.nav{
+  min-height:76px;
+  padding:0 6%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  border-bottom:1px solid var(--line);
+  background:#fff;
+  position:sticky;
+  top:0;
+  z-index:50
+}
+.brand{
+  font-size:23px;
+  font-weight:800;
+  white-space:nowrap
+}
+.brand span{
+  display:inline-grid;
+  place-items:center;
+  width:35px;
+  height:35px;
+  margin-right:5px;
+  border-radius:10px;
+  background:var(--blue);
+  color:white
+}
+.nav nav{
+  display:flex;
+  gap:20px;
+  font-size:14px;
+  font-weight:600;
+  color:#475467
+}
+.nav nav a:hover{color:var(--blue)}
 
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 21px;
+  border:0;
+  border-radius:11px;
+  background:var(--blue);
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 8px 20px #2457e633
+}
+.btn:hover{background:var(--blue2)}
+.btn.ghost{
+  background:#fff;
+  color:var(--blue);
+  border:1px solid #d8e0f2;
+  box-shadow:none
+}
+.btn.small{padding:10px 15px}
+.full{width:100%}
 
-.cv-preview{margin-top:10px;padding:22px;border:1px solid #dfe5ef;border-radius:12px;background:#fbfcfe;display:none}
-.cv-preview h3{margin-bottom:6px}.cv-preview p{margin:4px 0;font-size:13px}
+.lang{
+  border:1px solid var(--line);
+  background:white;
+  padding:9px 12px;
+  border-radius:9px;
+  cursor:pointer;
+  font-weight:700
+}
 
+.hero{
+  padding:90px 7%;
+  min-height:620px;
+  background:radial-gradient(circle at 80% 20%,#dfe9ff 0,#f8faff 35%,#fff 70%);
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:60px;
+  align-items:center
+}
+.eyebrow{
+  font-size:12px;
+  letter-spacing:2px;
+  color:var(--blue);
+  font-weight:800
+}
+.hero h1{margin-top:14px}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.hero-copy>p{font-size:19px;max-width:620px}
+.actions{display:flex;gap:12px;margin:28px 0;flex-wrap:wrap}
+
+.hero-card{
+  background:white;
+  padding:30px;
+  border:1px solid #e3e8f2;
+  border-radius:22px;
+  box-shadow:0 25px 70px #183b8217
+}
+
+.search-head{
+  display:flex;
+  justify-content:space-between;
+  font-weight:800;
+  font-size:19px;
+  margin-bottom:18px
+}
+.search-head strong{color:var(--blue)}
+
+input,select,textarea{
+  width:100%;
+  padding:13px 14px;
+  border:1px solid #d9e0eb;
+  border-radius:10px;
+  background:#fff;
+  color:var(--ink);
+  font:inherit;
+  outline:none
+}
+input:focus,select:focus,textarea:focus{
+  border-color:#8aa7f5;
+  box-shadow:0 0 0 3px #2457e614
+}
+
+.hero-card>*{margin-bottom:12px}
+.hero-card small{color:var(--muted)}
+
+.section{padding:85px 7%}
+.section.alt{background:var(--soft)}
+
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  margin-bottom:35px
+}
+
+.steps,.offers{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px
+}
+.steps article,.offer{
+  background:#fff;
+  border:1px solid var(--line);
+  padding:28px;
+  border-radius:18px
+}
+.steps article>span{
+  color:var(--blue);
+  font-weight:800
+}
+.steps h3{margin-top:24px}
+
+.offer{
+  transition:.2s
+}
+.offer:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 35px #1018280c
+}
+.tag{
+  display:inline-block;
+  margin-top:12px;
+  background:#edf2ff;
+  color:var(--blue);
+  padding:5px 10px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:700
+}
+
+.form-layout{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:60px;
+  align-items:start
+}
+.form-card{
+  padding:30px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:#fff;
+  box-shadow:0 15px 40px #1018280a;
+  display:grid;
+  gap:15px
+}
+.two{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px
+}
+label{
+  font-size:13px;
+  font-weight:700;
+  color:#344054;
+  display:grid;
+  gap:7px
+}
+
+.cv-preview{
+  display:none;
+  margin-top:10px;
+  padding:30px;
+  border:1px solid #dfe5ef;
+  background:white;
+  border-radius:4px;
+  min-height:400px
+}
+.cv-preview .cv-name{
+  font-size:28px;
+  font-weight:800;
+  color:var(--blue)
+}
+.cv-preview .cv-section{
+  margin-top:22px;
+  border-bottom:1px solid var(--line);
+  padding-bottom:8px;
+  font-weight:800;
+  color:var(--blue)
+}
+
+.note{
+  padding:15px;
+  background:var(--soft);
+  border-radius:10px;
+  color:var(--muted);
+  font-size:13px
+}
+
+.contact{
+  text-align:center;
+  background:#eef3ff
+}
+
+footer{
+  padding:40px 7%;
+  background:#0b1220;
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap
+}
+footer p{color:#98a2b3}
+
+@media(max-width:900px){
+  .nav nav{display:none}
+  .hero,.form-layout{grid-template-columns:1fr}
+  .steps,.offers{grid-template-columns:1fr}
+  .section{padding:65px 6%}
+  .two{grid-template-columns:1fr}
+  .hero{padding-top:60px}
+  footer{flex-direction:column}
+}
 </style>
 </head>
+
 <body>
+
 <header class="nav">
-  <a class="brand" href="#home"><span>S</span> StageLink</a>
-  <nav>
-    <a href="#home">Accueil</a><a href="#offers">Stages</a><a href="#jobs">Emplois</a><a href="#services">Services</a><a href="#how">Comment ça marche</a>
-    <a href="#companies">Entreprises</a><a href="#contact">Contact</a>
-  </nav>
-  <a class="btn small" href="https://forms.gle/X67pYgk2pk8x4Trt8" target="_blank" rel="noopener">Déposer mon CV</a>
-</header>
 
-<main>
-<section id="home" class="hero">
-  <div class="hero-copy">
-    <div class="eyebrow">AGENCE DE STAGES • MAROC</div>
-    <h1>Le bon stage.<br><em>Au bon endroit.</em></h1>
-    <p>StageLink accompagne les étudiants dans leur recherche de stage et connecte les talents aux entreprises qui recrutent.</p>
-    <div class="actions"><a class="btn" href="#offers">Trouver un stage</a><a class="btn ghost" href="https://forms.gle/X67pYgk2pk8x4Trt8" target="_blank" rel="noopener">Déposer mon CV</a></div>
-    <div class="trust"><b>+500</b><span>étudiants accompagnés</span><b>+120</b><span>entreprises partenaires</span></div>
-  </div>
-  <div class="hero-card">
-    <div class="search-head"><span>Recherche rapide</span><strong>⌕</strong></div>
-    <input id="search" placeholder="Métier, domaine, mot-clé">
-    <select id="city"><option value="">Toutes les villes</option><option>Fès</option><option>Rabat</option><option>Casablanca</option><option>Marrakech</option></select>
-    <select id="domain"><option value="">Tous les domaines</option><option>Comptabilité</option><option>Marketing</option><option>Informatique</option><option>Ressources humaines</option></select>
-    <button class="btn full" onclick="filterOffers()">Rechercher des stages</button>
-    <small>Des opportunités adaptées à votre profil.</small>
-  </div>
-</section>
-
-<section id="how" class="section">
-  <div class="section-head"><div><span class="eyebrow">SIMPLE & EFFICACE</span><h2>Comment fonctionne StageLink ?</h2></div></div>
-  <div class="steps">
-    <article><span>01</span><h3>Créez votre profil</h3><p>Présentez votre formation, vos compétences et votre recherche.</p></article>
-    <article><span>02</span><h3>Déposez votre CV</h3><p>Notre équipe dispose des informations nécessaires pour vous orienter.</p></article>
-    <article><span>03</span><h3>Trouvez votre opportunité</h3><p>Découvrez les offres et entrez en contact avec les entreprises.</p></article>
-  </div>
-</section>
-
-
-<section id="services" class="section">
-  <div class="section-head">
-    <div><span class="eyebrow">NOS SERVICES</span><h2>Tout pour votre carrière</h2></div>
-  </div>
-  <div class="steps">
-    <article>
-      <span>01</span><h3>Création de CV</h3>
-      <p>Créez un CV professionnel à partir de vos informations, formation et compétences.</p>
-      <a class="btn small" href="#cv-builder">Créer mon CV</a>
-    </article>
-    <article>
-      <span>02</span><h3>Postuler avec mon CV</h3>
-      <p>Déposez votre CV et candidatez aux opportunités qui correspondent à votre profil.</p>
-      <a class="btn small" href="https://forms.gle/X67pYgk2pk8x4Trt8" target="_blank" rel="noopener">Déposer mon CV</a>
-    </article>
-    <article>
-      <span>03</span><h3>Simulation d'entretien</h3>
-      <p>Entraînez-vous avec des questions fréquentes et préparez vos réponses.</p>
-      <a class="btn small" href="#interview">Commencer</a>
-    </article>
-  </div>
-</section>
-
-<section id="cv-builder" class="section alt">
-  <div class="form-layout">
-    <div>
-      <span class="eyebrow">CV BUILDER</span>
-      <h2>Créez votre CV</h2>
-      <p>Remplissez les informations ci-dessous pour générer un aperçu simple de votre CV.</p>
-    </div>
-    <form id="cvBuilder" class="form-card">
-      <label>Nom complet<input required name="name" placeholder="Votre nom"></label>
-      <div class="two">
-        <label>Téléphone<input name="phone" placeholder="+212 ..."></label>
-        <label>Email<input required type="email" name="email" placeholder="vous@email.com"></label>
-      </div>
-      <label>Formation<input required name="education" placeholder="Ex. Technicien spécialisé en gestion"></label>
-      <label>Compétences<input required name="skills" placeholder="Ex. Excel, communication, comptabilité"></label>
-      <label>Expérience / stages<textarea name="experience" rows="4" placeholder="Décrivez vos expériences..."></textarea></label>
-      <button class="btn full" type="submit">Générer mon CV</button>
-      <div id="cvPreview" class="cv-preview"></div>
-    </form>
-  </div>
-</section>
-
-<section id="offers" class="section alt">
-  <div class="section-head"><div><span class="eyebrow">OPPORTUNITÉS</span><h2>Nos offres de stage</h2></div><a href="#offers" class="textlink">Voir toutes les offres →</a></div>
-  <div id="offerGrid" class="offers"></div>
-</section>
-
-<section id="apply" class="section">
-  <div class="form-layout">
-    <div><span class="eyebrow">CANDIDATURE</span><h2>Déposez votre CV</h2><p>Envoyez-nous votre profil. StageLink pourra ensuite vous orienter vers les opportunités correspondant à votre recherche.</p><div class="mini-note">🔒 Vos informations sont destinées au traitement de votre demande.</div></div>
-    <form id="studentForm" class="form-card">
-      <div class="two"><label>Nom complet<input required name="name" placeholder="Votre nom"></label><label>Email<input required type="email" name="email" placeholder="vous@email.com"></label></div>
-      <div class="two"><label>Formation / spécialité<input required name="study" placeholder="Ex. Technicien comptable"></label><label>Ville<select required name="city"><option value="">Choisir</option><option>Fès</option><option>Rabat</option><option>Casablanca</option><option>Marrakech</option></select></label></div>
-      <div class="two"><label>Domaine<select required name="domain"><option value="">Choisir</option><option>Comptabilité</option><option>Marketing</option><option>Informatique</option><option>Ressources humaines</option></select></label><label>Type de stage<select required name="type"><option value="">Choisir</option><option>Observation</option><option>Application</option><option>Fin d'études</option></select></label></div>
-      <label>Votre CV<input required type="file" name="cv" accept=".pdf,.doc,.docx"></label>
-      <label>Message<textarea name="message" rows="4" placeholder="Parlez-nous brièvement de votre recherche..."></textarea></label>
-      <button class="btn full" type="submit">Envoyer ma candidature</button><div id="formMsg" class="form-msg"></div>
-    </form>
-  </div>
-</section>
-
-
-<section id="jobs" class="section alt">
-  <div class="section-head">
-    <div><span class="eyebrow">EMPLOI</span><h2>Les offres d'emploi</h2></div>
-  </div>
-  <div class="offers">
-    <article class="offer"><span class="eyebrow">COMMERCIAL</span><h3>Assistant commercial</h3><p>Fès · Entreprise partenaire</p><span class="tag">CDI / Débutant</span></article>
-    <article class="offer"><span class="eyebrow">ADMINISTRATION</span><h3>Assistant administratif</h3><p>Rabat · Entreprise partenaire</p><span class="tag">Temps plein</span></article>
-    <article class="offer"><span class="eyebrow">INFORMATIQUE</span><h3>Développeur junior</h3><p>Casablanca · Entreprise partenaire</p><span class="tag">Junior</span></article>
-  </div>
-</section>
-
-<section id="interview" class="section">
-  <div class="form-layout">
-    <div>
-      <span class="eyebrow">PRÉPARATION</span>
-      <h2>Simulation d'entretien</h2>
-      <p>Choisissez une question et entraînez-vous avant votre vrai entretien.</p>
-    </div>
-    <div class="form-card">
-      <label>Question d'entretien
-        <select id="interviewQuestion">
-          <option>Présentez-vous en quelques mots.</option>
-          <option>Pourquoi voulez-vous faire ce stage ?</option>
-          <option>Quelles sont vos principales qualités ?</option>
-          <option>Quel est votre objectif professionnel ?</option>
-          <option>Pourquoi devrions-nous vous choisir ?</option>
-        </select>
-      </label>
-      <textarea id="interviewAnswer" rows="5" placeholder="Écrivez votre réponse ici..."></textarea>
-      <button class="btn full" onclick="showInterviewTip()">Voir un conseil</button>
-      <div id="interviewTip" class="mini-note"></div>
-    </div>
-  </div>
-</section>
-
-<section id="companies" class="section dark">
-  <div class="company-grid"><div><span class="eyebrow light">POUR LES ENTREPRISES</span><h2>Vous cherchez des stagiaires motivés ?</h2><p>Publiez vos opportunités et recevez des profils adaptés à vos besoins.</p><a class="btn lightbtn" href="#company">Proposer un stage</a></div>
-  <div class="company-points"><div>✓ Profils ciblés</div><div>✓ Publication d'offres</div><div>✓ Mise en relation</div><div>✓ Accompagnement StageLink</div></div></div>
-</section>
-
-<section id="company" class="section">
-  <div class="form-layout">
-    <div><span class="eyebrow">ESPACE ENTREPRISE</span><h2>Publier une offre</h2><p>Présentez votre besoin et préparez votre prochaine campagne de recrutement de stagiaires.</p></div>
-    <form id="companyForm" class="form-card">
-      <label>Nom de l'entreprise<input required name="company" placeholder="Nom de votre entreprise"></label>
-      <div class="two"><label>Email professionnel<input required type="email" name="email" placeholder="contact@entreprise.ma"></label><label>Ville<input required name="city" placeholder="Fès"></label></div>
-      <div class="two"><label>Poste / stage<input required name="title" placeholder="Stagiaire comptabilité"></label><label>Domaine<select required name="domain"><option value="">Choisir</option><option>Comptabilité</option><option>Marketing</option><option>Informatique</option><option>Ressources humaines</option></select></label></div>
-      <label>Description<textarea required name="description" rows="5" placeholder="Missions, profil recherché..."></textarea></label>
-      <button class="btn full">Envoyer l'offre</button><div id="companyMsg" class="form-msg"></div>
-    </form>
-  </div>
-</section>
-
-<section id="dashboard" class="section alt">
-  <div class="section-head"><div><span class="eyebrow">ESPACE StageLink</span><h2>Tableau de bord démo</h2></div></div>
-  <div class="dash-grid">
-    <div class="metric"><span>Candidatures reçues</span><strong id="applicationsCount">0</strong></div>
-    <div class="metric"><span>Offres proposées</span><strong id="companyCount">0</strong></div>
-    <div class="metric"><span>CV déposés</span><strong id="cvCount">0</strong></div>
-  </div>
-  <p class="demo">Version locale de démonstration : les données sont conservées dans le navigateur. Pour une mise en ligne réelle, il faudra connecter une base de données et un stockage sécurisé des CV.</p>
-</section>
-
-<section id="contact" class="section contact"><span class="eyebrow">CONTACT</span><h2>Construisons votre prochaine opportunité.</h2><p>Étudiant ou entreprise, StageLink est là pour faciliter la mise en relation.</p><a class="btn" href="mailto:contact@stagelink.ma">contact@stagelink.ma</a></section>
-</main>
-
-<footer><div class="brand"><span>S</span> StageLink</div><p>Agence de stages — Connecter les talents aux opportunités.</p><small>© 2026 StageLink. Prototype professionnel.</small></footer>
-<script>
-const offers=[
- {title:"Stage — Comptabilité",company:"Cabinet partenaire",city:"Fès",domain:"Comptabilité",desc:"Accompagnement de l'équipe comptable et participation aux opérations courantes."},
- {title:"Stage — Marketing digital",company:"Entreprise partenaire",city:"Rabat",domain:"Marketing",desc:"Création de contenu, réseaux sociaux et soutien aux campagnes digitales."},
- {title:"Stage — Développement web",company:"Entreprise partenaire",city:"Casablanca",domain:"Informatique",desc:"Participation à des projets web et découverte d'un environnement professionnel."},
- {title:"Stage — Ressources humaines",company:"Entreprise partenaire",city:"Marrakech",domain:"Ressources humaines",desc:"Appui au recrutement, classement et suivi administratif des dossiers."},
- {title:"Stage — Assistant comptable",company:"Entreprise partenaire",city:"Fès",domain:"Comptabilité",desc:"Saisie, classement et préparation des documents comptables."},
- {title:"Stage — Community management",company:"Entreprise partenaire",city:"Rabat",domain:"Marketing",desc:"Animation des réseaux sociaux et préparation de contenus."}
-];
-
-function renderOffers(list=offers){
- const grid=document.getElementById("offerGrid");
- grid.innerHTML=list.map(o=>`<article class="offer"><span class="eyebrow">${o.domain.toUpperCase()}</span><h3>${o.title}</h3><p>${o.company} · ${o.city}</p><p>${o.desc}</p><span class="tag">${o.domain}</span></article>`).join("");
-}
-function filterOffers(){
- const q=document.getElementById("search").value.toLowerCase(), city=document.getElementById("city").value, domain=document.getElementById("domain").value;
- const result=offers.filter(o=>(!q||(o.title+o.company+o.domain).toLowerCase().includes(q))&&(!city||o.city===city)&&(!domain||o.domain===domain));
- renderOffers(result);
- document.getElementById("offers").scrollIntoView({behavior:"smooth"});
-}
-document.getElementById("studentForm").addEventListener("submit",e=>{
- e.preventDefault(); const data=new FormData(e.target); const cv=data.get("cv");
- const arr=JSON.parse(localStorage.getItem("stagelinkApplications")||"[]");
- arr.push({name:data.get("name"),email:data.get("email"),study:data.get("study"),city:data.get("city"),domain:data.get("domain"),cv:cv?.name||"",date:new Date().toLocaleDateString("fr-FR")});
- localStorage.setItem("stagelinkApplications",JSON.stringify(arr));
- document.getElementById("formMsg").textContent="✓ Demande envoyée. Merci, votre profil est bien enregistré dans cette démo.";
- e.target.reset(); updateDashboard();
-});
-document.getElementById("companyForm").addEventListener("submit",e=>{
- e.preventDefault(); const data=new FormData(e.target);
- const arr=JSON.parse(localStorage.getItem("stagelinkCompanyOffers")||"[]");
- arr.push({company:data.get("company"),email:data.get("email"),city:data.get("city"),title:data.get("title"),domain:data.get("domain"),description:data.get("description")});
- localStorage.setItem("stagelinkCompanyOffers",JSON.stringify(arr));
- document.getElementById("companyMsg").textContent="✓ Offre reçue. StageLink peut maintenant la traiter.";
- e.target.reset(); updateDashboard();
-});
-function updateDashboard(){
- const a=JSON.parse(localStorage.getItem("stagelinkApplications")||"[]"), c=JSON.parse(localStorage.getItem("stagelinkCompanyOffers")||"[]");
- document.getElementById("applicationsCount").textContent=a.length;
- document.getElementById("companyCount").textContent=c.length;
- document.getElementById("cvCount").textContent=a.filter(x=>x.cv).length;
-}
-renderOffers(); updateDashboard();
-
-
-document.getElementById("cvBuilder").addEventListener("submit",function(e){
-  e.preventDefault();
-  const d=new FormData(e.target);
-  const p=document.getElementById("cvPreview");
-  p.style.display="block";
-  p.innerHTML=`<h3>${escapeHtml(d.get("name"))}</h3>
-  <p>${escapeHtml(d.get("email"))}${d.get("phone")?" · "+escapeHtml(d.get("phone")):""}</p>
-  <hr><p><b>Formation :</b> ${escapeHtml(d.get("education"))}</p>
-  <p><b>Compétences :</b> ${escapeHtml(d.get("skills"))}</p>
-  <p><b>Expérience :</b> ${escapeHtml(d.get("experience")||"À compléter")}</p>`;
-});
-function escapeHtml(v){return String(v).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));}
-function showInterviewTip(){
-  const tips=[
-    "Conseil : présentez-vous en 30 à 60 secondes, avec votre formation, vos compétences et votre objectif.",
-    "Conseil : expliquez ce que vous voulez apprendre et ce que vous pouvez apporter à l'entreprise.",
-    "Conseil : choisissez une qualité réelle et donnez un petit exemple concret.",
-    "Conseil : reliez votre objectif à votre formation et au domaine de l'entreprise.",
-    "Conseil : mettez en avant votre motivation, votre sérieux et les compétences utiles pour le poste."
-  ];
-  const i=document.getElementById("interviewQuestion").selectedIndex;
-  document.getElementById("interviewTip").textContent=tips[i];
-}
-
-</script>
-</body>
-</html>
+  <a
